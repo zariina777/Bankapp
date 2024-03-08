@@ -1,0 +1,30 @@
+spring:
+  main:
+    banner-mode: off
+
+  sql:
+    init:
+      mode: always
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    enabled: false
+
+logging:
+  level:
+    root: INFO
+    test: DEBUG
+
+  file:
+    name: appBankTest.log
+
+  pattern:
+    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+    %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="create agreements table">
+        <preConditions onFail="CONTINUE" onFailMessage="Table agreements already exists">
+            <not>
+                <tableExists tableName="agreements"/>
+            </not>
+        </preConditions>
+        <createTable tableName="agreements">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="client_id" type="uuid">
+                <constraints foreignKeyName="client_id_in_agreement" references="clients(id)" nullable="false"/>
+            </column>
+            <column name="account_id" type="uuid">
+                <constraints foreignKeyName="account_id" references="accounts(id)" nullable="false"/>
+            </column>
+            <column name="product_id" type="uuid">
+                <constraints foreignKeyName="product_id" references="products(id)" nullable="false"/>
+            </column>
+            <column name="interest_rate" type="numeric(6, 4)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="status" type="varchar(32)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="amount" type="numeric(15, 2)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="created_at" type="timestamp with time zone">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="updated_at" type="timestamp with time zone">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

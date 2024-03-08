@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet  author="n.kapinos"  id="create function">
+        <sql splitStatements="false">
+            CREATE FUNCTION mark_accounts_for_deletion(date_ character varying, status character varying)
+                RETURNS setof accounts
+            AS
+            $$
+            UPDATE accounts SET status = $2
+                WHERE accounts.id in (
+                SELECT
+                accounts.id
+                FROM accounts
+                WHERE
+                accounts.balance = 0
+                AND accounts.created_at &lt; TO_DATE($1, 'YYYY-MM-DD')
+                                                 AND NOT (accounts.status = $2)
+            AND accounts.id NOT IN (SELECT transactions.credit_account_id FROM transactions)
+            AND accounts.id NOT IN (SELECT transactions.debit_account_id FROM transactions)
+            );
+            SELECT * FROM accounts WHERE accounts.status = $2;
+            $$
+            LANGUAGE SQL;
+        </sql>
+    </changeSet>
+
+<!--    <changeSet  author="n.kapinos"  id="create function">-->
+<!--        <pro:createFunction  catalogName="cat"-->
+<!--                             dbms="h2, !oracle, mysql"-->
+<!--                             encoding="UTF-8"-->
+<!--                             functionName="A String"-->
+<!--                             path="com/example/my-logic.sql"-->
+<!--                             relativeToChangelogFile="true"-->
+<!--                             replaceIfExists="false"-->
+<!--                             schemaName="public">A String</pro:createFunction>-->
+<!--    </changeSet>-->
+
+    <changeSet author="n.kapinos" id="drop agreements table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="agreements"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="agreements"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop accounts table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="accounts"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="accounts"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop clients table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="clients"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="clients"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop products table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="products"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="products"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop managers table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="managers"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="managers"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop databasechangelog table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="databasechangelog"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="databasechangelog"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop databasechangeloglock table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="databasechangeloglock"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="databasechangeloglock"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

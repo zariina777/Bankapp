@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/00_drop-tables-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/07_create_function.xml"/>
+
+
+</databaseChangeLog>

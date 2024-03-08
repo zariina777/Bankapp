@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="insert test data into transactions table">
+        <insert tableName="transactions">
+            <column name="id" value="523e4567-e89b-12d3-a456-060000000001"/>
+            <column name="debit_account_id" value="523e4567-e89b-12d3-a456-040000000001"/>
+            <column name="credit_account_id" value="523e4567-e89b-12d3-a456-040000000002"/>
+            <column name="type" value="TRANSFER"/>
+            <column name="amount" value="500.00"/>
+            <column name="description" value="transfer between accounts"/>
+            <column name="created_at" value="2023-10-05 12:02"/>
+        </insert>
+        <insert tableName="transactions">
+            <column name="id" value="523e4567-e89b-12d3-a456-060000000002"/>
+            <column name="debit_account_id" value="523e4567-e89b-12d3-a456-040000000001"/>
+            <column name="credit_account_id" value="523e4567-e89b-12d3-a456-040000000004"/>
+            <column name="type" value="PAYMENT"/>
+            <column name="amount" value="45.08"/>
+            <column name="description" value="payment for service"/>
+            <column name="created_at" value="2023-05-12 08:25"/>
+        </insert>
+        <insert tableName="transactions">
+            <column name="id" value="523e4567-e89b-12d3-a456-060000000003"/>
+            <column name="debit_account_id" value="523e4567-e89b-12d3-a456-040000000004"/>
+            <column name="credit_account_id" value="523e4567-e89b-12d3-a456-040000000007"/>
+            <column name="type" value="DEPOSIT"/>
+            <column name="amount" value="1000.00"/>
+            <column name="description" value="replenishment of the deposit account"/>
+            <column name="created_at" value="2023-08-08 14:23"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="insert test data into products table">
+        <insert tableName="products">
+            <column name="id" value="523e4567-e89b-12d3-a456-020000000001"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000001"/>
+            <column name="name" value="Mortgage up to 200.000 EUR"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="interest_rate" value="5.25"/>
+            <column name="product_limit" value="200000"/>
+            <column name="created_at" value="2022-12-01"/>
+            <column name="updated_at" value="2023-05-01"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" value="523e4567-e89b-12d3-a456-020000000002"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000001"/>
+            <column name="name" value="Mortgage up to 500.000 EUR"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="interest_rate" value="3.50"/>
+            <column name="product_limit" value="500000"/>
+            <column name="created_at" value="2022-12-01"/>
+            <column name="updated_at" value="2023-05-01"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" value="523e4567-e89b-12d3-a456-020000000003"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000003"/>
+            <column name="name" value="Deposit up to 100.000 EUR"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="interest_rate" value="10.0"/>
+            <column name="product_limit" value="1000000"/>
+            <column name="created_at" value="2023-03-01"/>
+            <column name="updated_at" value="2023-03-01"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" value="523e4567-e89b-12d3-a456-020000000004"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000002"/>
+            <column name="name" value="Current account EUR"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="interest_rate" value="0.0"/>
+            <column name="product_limit" value="0"/>
+            <column name="created_at" value="2022-03-01"/>
+            <column name="updated_at" value="2022-03-01"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="insert test data into clients table">
+        <insert tableName="clients">
+            <column name="id" value="523e4567-e89b-12d3-a456-030000000001"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000001"/>
+            <column name="status" value="REGULAR"/>
+            <column name="tax_code" value="133/8150/8159"/>
+            <column name="first_name" value="Lukas"/>
+            <column name="last_name" value="Müller"/>
+            <column name="email" value="regular@gmail.com"/>
+            <column name="pass" value="$2a$12$RbbNrGI9ubI1s0F3rc2pKeEBH314OYZyumTvLfrTD38iVYYqxBQBK"/>
+            <column name="address" value="Lansstraße 81, D-11179 Berlin, Germany"/>
+            <column name="phone" value="+49 30 5684962"/>
+            <column name="created_at" value="2023-01-20 10:35"/>
+            <column name="updated_at" value="2023-01-20 10:35"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="id" value="523e4567-e89b-12d3-a456-030000000002"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000002"/>
+            <column name="status" value="REGULAR"/>
+            <column name="tax_code" value="513/3081/5081"/>
+            <column name="first_name" value="Markus"/>
+            <column name="last_name" value="Schmidt"/>
+            <column name="email" value="markus.schmidt@gmx.de"/>
+            <column name="pass" value="$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG"/>
+            <column name="address" value="Musterstraße 17, D-80331 München, Germany"/>
+            <column name="phone" value="+49 89 1234567"/>
+            <column name="created_at" value="2023-02-15 10:48"/>
+            <column name="updated_at" value="2023-04-05 17:23"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="id" value="523e4567-e89b-12d3-a456-030000000003"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000001"/>
+            <column name="status" value="REGULAR"/>
+            <column name="tax_code" value="241/5678/9012"/>
+            <column name="first_name" value="Lena"/>
+            <column name="last_name" value="Weber"/>
+            <column name="email" value="lena.weber@yahoo.de"/>
+            <column name="pass" value="$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG"/>
+            <column name="address" value="Hauptstraße 25, D-50667 Köln, Germany"/>
+            <column name="phone" value="+49 221 9876543"/>
+            <column name="created_at" value="2023-03-02 14:05"/>
+            <column name="updated_at" value="2023-03-02 14:05"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="id" value="523e4567-e89b-12d3-a456-030000000004"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000003"/>
+            <column name="status" value="VIP"/>
+            <column name="tax_code" value="312/4927/3045"/>
+            <column name="first_name" value="Sara"/>
+            <column name="last_name" value="Fischer"/>
+            <column name="email" value="sara.fischer@outlook.de"/>
+            <column name="pass" value="$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG"/>
+            <column name="address" value="Schillerstraße 12, D-70173 Stuttgart, Germany"/>
+            <column name="phone" value="+49 711 4567890"/>
+            <column name="created_at" value="2023-04-01 12:33"/>
+            <column name="updated_at" value="2023-04-24 16:07"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="id" value="523e4567-e89b-12d3-a456-030000000005"/>
+            <column name="manager_id" value="523e4567-e89b-12d3-a456-010000000001"/>
+            <column name="status" value="VIP"/>
+            <column name="tax_code" value="152/8436/7190"/>
+            <column name="first_name" value="Laura"/>
+            <column name="last_name" value="Klein"/>
+            <column name="email" value="vip@gmail.com"/>
+            <column name="pass" value="$2a$12$ORhWEsepUMQMZRfcHNrhYeEXBrxW6CyBNBj3fFfVERsOGaM5h39CK"/>
+            <column name="address" value="Goetheplatz 5, D-60311 Frankfurt am Main, Germany"/>
+            <column name="phone" value="+49 69 8765432"/>
+            <column name="created_at" value="2023-04-04 15:23"/>
+            <column name="updated_at" value="2023-04-04 15:23"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

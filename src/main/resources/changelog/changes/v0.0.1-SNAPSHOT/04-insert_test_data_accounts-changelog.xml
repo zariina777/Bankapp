@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="insert test data into accounts table">
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000001"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000001"/>
+            <column name="name" value="DE89 3704 0044 0532 0130 00"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="5247.27"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2023-01-20 10:35"/>
+            <column name="updated_at" value="2023-10-05 12:02"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000002"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000001"/>
+            <column name="name" value="DE12 1001 1001 2620 6568 90"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="2503.50"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2023-04-17 10:35"/>
+            <column name="updated_at" value="2023-10-05 12:02"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000003"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000001"/>
+            <column name="name" value="DE71 5123 0800 0000 6830 99"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="10000.30"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2022-08-06 10:35"/>
+            <column name="updated_at" value="2022-08-06 10:35"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000004"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000002"/>
+            <column name="name" value="DE33 2004 1144 0199 9999 00"/>
+            <column name="type" value="DEPOSIT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="250000.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2023-07-25 10:35"/>
+            <column name="updated_at" value="2023-08-08 14:23"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000005"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000003"/>
+            <column name="name" value="DE45 7002 0270 0015 7695 53"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="153256.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2022-11-25 10:35"/>
+            <column name="updated_at" value="2023-03-20 10:35"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000006"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000003"/>
+            <column name="name" value="DE98 5001 0517 5407 3249 31"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="0.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2022-12-06 10:35"/>
+            <column name="updated_at" value="2022-12-06 10:35"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="523e4567-e89b-12d3-a456-040000000007"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000004"/>
+            <column name="name" value="DE16 3706 0193 6001 2345 67"/>
+            <column name="type" value="CURRENT"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="5151.15"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="created_at" value="2023-02-14 10:35"/>
+            <column name="updated_at" value="2023-08-08 14:23"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

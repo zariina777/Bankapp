@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="create transactions table">
+        <preConditions onFail="CONTINUE" onFailMessage="Table transactions already exists">
+            <not>
+                <tableExists tableName="transactions"/>
+            </not>
+        </preConditions>
+        <createTable tableName="transactions">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="debit_account_id" type="uuid">
+                <constraints foreignKeyName="debit_account_id" references="accounts(id)" nullable="false"/>
+            </column>
+            <column name="credit_account_id" type="uuid">
+                <constraints foreignKeyName="credit_account_id" references="accounts(id)" nullable="false"/>
+            </column>
+            <column name="type" type="varchar(32)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="amount" type="numeric(15, 2)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="description" type="varchar(256)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="created_at" type="timestamp with time zone">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

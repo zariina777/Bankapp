@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="n.kapinos" id="insert test data into agreements table">
+        <insert tableName="agreements">
+            <column name="id" value="523e4567-e89b-12d3-a456-050000000001"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000001"/>
+            <column name="account_id" value="523e4567-e89b-12d3-a456-040000000001"/>
+            <column name="product_id" value="523e4567-e89b-12d3-a456-020000000004"/>
+            <column name="interest_rate" value="0.0"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="amount" value="0"/>
+            <column name="created_at" value="2023-01-20 10:35"/>
+            <column name="updated_at" value="2023-01-20 10:35"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="523e4567-e89b-12d3-a456-050000000002"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000002"/>
+            <column name="account_id" value="523e4567-e89b-12d3-a456-040000000004"/>
+            <column name="product_id" value="523e4567-e89b-12d3-a456-020000000003"/>
+            <column name="interest_rate" value="10.0"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="amount" value="250000"/>
+            <column name="created_at" value="2023-07-25 10:35"/>
+            <column name="updated_at" value="2023-07-25 10:35"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="523e4567-e89b-12d3-a456-050000000003"/>
+            <column name="client_id" value="523e4567-e89b-12d3-a456-030000000003"/>
+            <column name="account_id" value="523e4567-e89b-12d3-a456-040000000005"/>
+            <column name="product_id" value="523e4567-e89b-12d3-a456-020000000004"/>
+            <column name="interest_rate" value="0.0"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="amount" value="153256.00"/>
+            <column name="created_at" value="2022-11-25 10:35"/>
+            <column name="updated_at" value="2023-03-20 10:35"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
